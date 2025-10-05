@@ -1,9 +1,9 @@
 # färbl
 Guess colors and win nothing.
 
-Play here: [t0rbn.github.io/faerbl](t0rbn.github.io/faerbl)
+Play here: [t0rbn.github.io/faerbl](http://t0rbn.github.io/faerbl)
 
-![screenshoit](/etc/screenshot.png)
+![screenshot](/etc/screenshot.png)
 
 # Tech
 This project is based on the [vite + react Template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) using npm
