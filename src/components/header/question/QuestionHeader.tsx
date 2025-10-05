@@ -6,7 +6,7 @@ interface QuestionHeaderProps {
 }
 
 export function ColorToValueQuestionHeader(props: QuestionHeaderProps) {
-    return <HeaderContainer className={styles.questionHeader}>
+    return <HeaderContainer>
         <div>find</div>
         <strong>{props.value}</strong>
     </HeaderContainer>
@@ -14,7 +14,7 @@ export function ColorToValueQuestionHeader(props: QuestionHeaderProps) {
 
 
 export function ValueToColorQuestionHeader(props: QuestionHeaderProps) {
-    return <HeaderContainer className={styles.questionHeader}>
+    return <HeaderContainer>
         <div className={styles.valueToColor} style={{backgroundColor: props.value}}>
             <div>find this color</div>
         </div>

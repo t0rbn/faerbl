@@ -1,13 +1,13 @@
 :root {
-    --brightness-background-base: 95%;
-    --brightness-background-gradient-step: 85%;
-    --staturation-background-colorized: 25%;
+    --brightness-background-base: 85%;
+    --brightness-background-gradient-secondary: 100%;
+    --staturation-background-colorized: 75%;
 
-    --color-background: hsl(0, 0, var(--brightness-background-base));
+    --color-background: hsl(0 0 var(--brightness-background-base));
     --color-contrast: hsl(0 0% 10%);
 
-    --color-status-good: hsl(137, 100%, 50%);
-    --color-status-bad: hsl(0, 99%, 50%);
+    --color-background-status-good: hsl(120, 100%, 85%);
+    --color-background-status-bad: hsl(0, 100%, 85%);
 
     --size-s: .25rem;
     --size-m: 1rem;

@@ -1,10 +1,3 @@
-.questionHeader {
-    transition: var(--transition-default);
-    @starting-style {
-        opacity: 0;
-    }
-}
-
 .valueToColor {
     width: 100%;
     height: 100%;

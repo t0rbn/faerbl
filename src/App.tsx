@@ -15,15 +15,12 @@ function App() {
         const result = applyAnswer(gameState, value)
 
         setPlayState((playState) => result.wasCorrect ? 'correct' : 'incorrect')
-        await new Promise(r => setTimeout(r, 2000))
+        await new Promise(r => setTimeout(r, 1000))
         setGameState((gameState) => result.newState)
         setPlayState('question')
     }
 
     const correctValue = gameState.question.optionValues[gameState.question.correctOptionIndex]
-    const styleOverrides = {
-        '--color-game': correctValue
-    } as any
 
     function HeaderComponent() {
         if (playState === 'question') {
@@ -44,7 +41,18 @@ function App() {
 
     }
 
-    return <div className={cns(styles.wrapper, gameState.question.mode === 'value-to-color' ? styles.colorized : undefined)} style={styleOverrides}>
+    const styleOverrides = {
+        '--color-game': correctValue
+    } as any
+
+    const wrapperClassNames = [
+        styles.wrapper,
+        gameState.question.mode === 'value-to-color' ? styles.colorized : undefined,
+        playState === 'correct' ? styles.correct : undefined,
+        playState === 'incorrect' ? styles.incorrect : undefined,
+    ]
+
+    return <div className={cns(...wrapperClassNames)} style={styleOverrides}>
         <div className={styles.appLayout}>
             <div className={styles.score}>score: {gameState.points}/{gameState.round}</div>
 

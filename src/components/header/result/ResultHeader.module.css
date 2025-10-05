@@ -1,0 +1,67 @@
+.iconContainer {
+    height: 50%;
+    aspect-ratio: 1;
+
+    border-radius: var(--border-radius-default);
+    border: var(--border-default);
+    padding: var(--size-m);
+
+
+    svg {
+        height: 100%;
+        width: auto;
+        fill: var(--color-background);
+    }
+
+    &.incorrect {
+        background-color: vaR(--color-background-status-bad);
+        svg {
+            fill: var(--color-contrast);
+            animation:  var(--duration-default) ease-out var(--duration-default) wiggle;
+        }
+    }
+
+    &.correct {
+        background-color: vaR(--color-background-status-good);
+        svg {
+            fill: var(--color-contrast);
+            animation:  var(--duration-default) ease-out var(--duration-default) jump;
+        }
+    }
+}
+
+@keyframes wiggle {
+    0% {
+        transform: none;
+    }
+    25% {
+        transform: rotate(-10deg);
+    }
+
+    50% {
+        transform: rotate(10deg);
+
+    }
+
+    25% {
+        transform: rotate(-10deg);
+    }
+
+    100% {
+        transform: none;
+    }
+}
+
+@keyframes jump {
+    0% {
+        transform: none;
+    }
+
+    50% {
+        transform: translateY(calc(-1 * var(--size-m)));
+    }
+
+    100% {
+        transform: none;
+    }
+}

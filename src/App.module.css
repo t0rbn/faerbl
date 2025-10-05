@@ -3,11 +3,23 @@
     transition: var(--transition-default);
 
     background-color: var(--color-background);
-    background-image: linear-gradient(to bottom, hsl(from var(--color-background) h s var(--brightness-background-gradient-step)), var(--color-background));
+    background-image: linear-gradient(
+            to bottom,
+            var(--color-background),
+            hsl(from var(--color-background) h s var(--brightness-background-gradient-secondary))
+    );
 
     &.colorized {
         --color-game: #000;
         --color-background: hsl(from var(--color-game) h var(--staturation-background-colorized) var(--brightness-background-base));
+    }
+
+    &.correct {
+        --color-background: var(--color-background-status-good);
+    }
+
+    &.incorrect {
+        --color-background: var(--color-background-status-bad);
     }
 
     .appLayout {
@@ -26,7 +38,6 @@
             display: flex;
             align-items: center;
             justify-content: center;
-
         }
     }
 
