@@ -1,0 +1,30 @@
+:root {
+    --brightness-background-base: 95%;
+    --brightness-background-gradient-step: 85%;
+    --staturation-background-colorized: 25%;
+
+    --color-background: hsl(0, 0%, var(--brightness-background-base));
+    --color-contrast: hsl(0 0% 10%);
+
+    --color-status-good: hsl(137, 100%, 50%);
+    --color-status-bad: hsl(0, 99%, 50%);
+
+    --size-s: .25rem;
+    --size-m: 1rem;
+    --size-l: 3rem;
+
+    --font-size-default: var(--size-m);
+    --font-size-large: var(--size-l);
+
+    --border-default: var(--size-s) solid var(--color-contrast);
+    --border-radius-default: 5rem;
+
+    --duration-default: 1000ms;
+    --transition-default: all var(--duration-default) ease-out;
+
+    @media screen and (min-height: 50rem) {
+        --size-m: 1.5rem;
+        --size-l: 3rem;
+    }
+
+}

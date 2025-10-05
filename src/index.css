@@ -1,0 +1,32 @@
+@font-face {
+    font-family: 'Arvo';
+    src: url('./assets/fonts/Arvo-Regular.ttf');
+}
+
+html, body {
+    color: var(--color-contrast);
+
+    * {
+        color: var(--color-contrast);
+        font-size: var(--font-size-default);
+        font-family: Arvo, sans-serif;
+        line-height: 1.25;
+    }
+
+    strong {
+        font-size: var(--font-size-large);
+        font-weight: bold;
+    }
+
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#root {
+    height: 100%;
+}
+
+* {
+    box-sizing: border-box;
+}

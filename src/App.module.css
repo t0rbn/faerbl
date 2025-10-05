@@ -1,0 +1,36 @@
+.wrapper {
+    height: 100%;
+    transition: var(--transition-default);
+
+    background-color: var(--color-background);
+    background-image: linear-gradient(to bottom, hsl(from var(--color-background) h s var(--brightness-background-gradient-step)), var(--color-background));
+
+    &.colorized {
+        --color-game: #000;
+        --color-background: hsl(from var(--color-game) h var(--staturation-background-colorized) var(--brightness-background-base));
+    }
+
+    .appLayout {
+        display: grid;
+        grid-template-rows: max-content 1fr 1fr;
+        grid-template-columns: 1fr;
+        grid-gap: var(--size-m);
+
+        height: 100%;
+        padding: var(--size-m);
+
+        max-width: 75svh;
+        margin: 0 auto;
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+    }
+
+    .score {
+        justify-self: end;
+    }
+}
