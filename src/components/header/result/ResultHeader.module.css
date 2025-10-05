@@ -1,32 +1,44 @@
-.iconContainer {
-    height: 50%;
+.icon {
+    font-size: var(--font-size-large);
+    font-family: 'Material Symbols';
+    font-weight: bold;
+
+    line-height: 1.5;
     aspect-ratio: 1;
+    vertical-align: center;
+    text-align: center;
+    border-radius: 100svh;
+    border: var(--border-default)
 
-    border-radius: var(--border-radius-default);
-    border: var(--border-default);
-    padding: var(--size-m);
+}
 
+.incorrect {
+    color: var(--color-contrast-status-bad);
 
-    svg {
-        height: 100%;
-        width: auto;
-        fill: var(--color-background);
+    * {
+        color: inherit;
     }
 
-    &.incorrect {
-        background-color: vaR(--color-background-status-bad);
-        svg {
-            fill: var(--color-contrast);
-            animation:  var(--duration-default) ease-out var(--duration-default) wiggle;
-        }
+    .icon {
+        animation: var(--duration-default) ease-out var(--duration-default) wiggle;
+        background-color: var(--color-background-status-bad);
+        color: var(--color-contrast-status-bad);
+        border-color: var(--color-contrast-status-bad);
+    }
+}
+
+.correct {
+    color: var(--color-contrast-status-good);
+
+    * {
+        color: inherit;
     }
 
-    &.correct {
-        background-color: vaR(--color-background-status-good);
-        svg {
-            fill: var(--color-contrast);
-            animation:  var(--duration-default) ease-out var(--duration-default) jump;
-        }
+    .icon {
+        animation: var(--duration-default) ease-out var(--duration-default) jump;
+        background-color: var(--color-background-status-good);
+        color: var(--color-contrast-status-good);
+        border-color: var(--color-contrast-status-good);
     }
 }
 

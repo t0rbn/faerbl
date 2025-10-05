@@ -7,7 +7,9 @@
     --color-contrast: hsl(0 0% 10%);
 
     --color-background-status-good: hsl(120, 100%, 85%);
+    --color-contrast-status-good: hsl(120, 100%, 25%);
     --color-background-status-bad: hsl(0, 100%, 85%);
+    --color-contrast-status-bad: hsl(0, 100%, 25%);
 
     --size-s: .25rem;
     --size-m: 1rem;
