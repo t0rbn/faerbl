@@ -1,5 +1,7 @@
 import {getRandomIntInRange, getRandomOf} from "../../utils/random";
 import webColors from "./named-colors.json"
+import extendedColors from "./extended-named-colors.json";
+
 
 export type NotationGenerator = () => string
 
@@ -18,6 +20,6 @@ export const RgbNotationGenerator: NotationGenerator = () => {
     return `rgb(${r()} ${r()} ${r()})`
 }
 
-export const NamedColorNotationGenerator: NotationGenerator = () => {
+export const NamedColorsGenerator: NotationGenerator = () => {
     return getRandomOf(webColors)
 }

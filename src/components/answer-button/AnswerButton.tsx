@@ -2,13 +2,13 @@ import {GameQuestion, GameQuestionMode} from "../../types/game-state";
 import styles from "./AnswerButton.module.css"
 import {cns} from "../../utils/cns";
 import React from "react";
-import {isCorrect} from "../../game/game-state-machine";
 
 interface AnswerButtonProps {
-    displayMode: 'question' | 'correct' | 'incorrect'
     value: string,
     mode: GameQuestionMode
     onClick: () => void
+    isCorrect: boolean
+    disabled: boolean
 }
 
 export function AnswerButton(props: AnswerButtonProps) {
@@ -18,10 +18,10 @@ export function AnswerButton(props: AnswerButtonProps) {
 
     const classNames = [
         styles.answerButton,
-        props.displayMode === 'incorrect' ? styles.showWrong : null,
+        props.disabled && !props.isCorrect ? styles.showWrong : null,
     ]
 
-    return <button style={style} disabled={props.displayMode !== 'question'} onClick={props.onClick} className={cns(...classNames)}>
+    return <button style={style} disabled={props.disabled } onClick={props.onClick} className={cns(...classNames)}>
         {props.mode === 'value-to-color' ? props.value : <>&nbsp;</>}
     </button>
 }
@@ -37,7 +37,8 @@ export function AnswerButtonGroup(props: AnswerButtonGroupProps) {
         const value = props.question.optionValues[index]
         return <AnswerButton
             key={value}
-            displayMode={props.showSolution && !isCorrect(props.question, value) ? 'incorrect' : 'question'}
+            disabled={props.showSolution}
+            isCorrect={index === props.question.correctOptionIndex}
             value={value}
             mode={props.question.mode}
             onClick={() => props.onSelect(value)}
@@ -46,15 +47,13 @@ export function AnswerButtonGroup(props: AnswerButtonGroupProps) {
 
     return <div className={cns(styles.group)}>
         {buttonForIndex(0)}
-        <div className={styles.verticalSeparator} />
+        <div className={styles.verticalSeparator}/>
         {buttonForIndex(1)}
 
-        <div className={styles.horizontalSeparator} />
+        <div className={styles.horizontalSeparator}/>
 
         {buttonForIndex(2)}
-        <div className={styles.verticalSeparator} />
+        <div className={styles.verticalSeparator}/>
         {buttonForIndex(3)}
-
-
     </div>
 }

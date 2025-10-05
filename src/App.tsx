@@ -3,28 +3,21 @@ import styles from "./App.module.css"
 import {GameState} from "./types/game-state";
 import {AnswerButtonGroup} from "./components/answer-button/AnswerButton";
 import {ColorToValueQuestionHeader, ValueToColorQuestionHeader} from "./components/header/question/QuestionHeader";
-import {generateNewQuestion, getInitialState, isCorrect} from "./game/game-state-machine";
+import {applyAnswer, getInitialState} from "./game/game-state-machine";
 import {cns} from "./utils/cns";
 import {CorrectResultHeader, IncorrectResultHeader} from "./components/header/result/ResultHeader";
 
 function App() {
     const [gameState, setGameState] = useState<GameState>(getInitialState())
+    const [playState, setPlayState] = useState<'question' | 'correct' | 'incorrect'>('question')
 
     const handleClickedOnValue = async (value: string) => {
-        setGameState((gameState) => ({
-            ...gameState,
-            playMode: isCorrect(gameState.question, value) ? 'show-correct' : 'show-incorrect',
-            points: gameState.points + (isCorrect(gameState.question, value) ? 1 : 0),
-            round: gameState.round + 1
-        }))
+        const result = applyAnswer(gameState, value)
 
+        setPlayState((playState) => result.wasCorrect ? 'correct' : 'incorrect')
         await new Promise(r => setTimeout(r, 2000))
-
-        setGameState((gameState) => ({
-            ...gameState,
-            question: generateNewQuestion(),
-            playMode: 'question'
-        }))
+        setGameState((gameState) => result.newState)
+        setPlayState('question')
     }
 
     const correctValue = gameState.question.optionValues[gameState.question.correctOptionIndex]
@@ -33,18 +26,18 @@ function App() {
     } as any
 
     function HeaderComponent() {
-        if (gameState.playMode === 'question') {
+        if (playState === 'question') {
             if (gameState.question.mode === 'value-to-color') {
                 return <ValueToColorQuestionHeader value={correctValue}/>
             }
             return <ColorToValueQuestionHeader value={correctValue}/>
         }
 
-        if (gameState.playMode === 'show-correct') {
+        if (playState === 'correct') {
             return <CorrectResultHeader/>
         }
 
-        if (gameState.playMode === 'show-incorrect') {
+        if (playState === 'incorrect') {
             return <IncorrectResultHeader/>
         }
         return <div>game state broken. what?!</div>
@@ -56,7 +49,7 @@ function App() {
             <div className={styles.score}>score: {gameState.points}/{gameState.round}</div>
 
             <HeaderComponent/>
-            <AnswerButtonGroup showSolution={gameState.playMode !== 'question'} question={gameState.question} onSelect={(v) => handleClickedOnValue(v)}/>
+            <AnswerButtonGroup showSolution={playState !== 'question'} question={gameState.question} onSelect={(v) => handleClickedOnValue(v)}/>
         </div>
     </div>
 }
