@@ -1,7 +1,7 @@
 # färbl
 Guess colors and win nothing.
 
-Play here: [t0rbn.github.com/faerbl]()
+Play here: [t0rbn.github.io/faerbl]()
 
 ![screenshoit](/etc/screenshot.png)
 
