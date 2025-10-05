@@ -2,9 +2,10 @@ import React, {useState} from 'react'
 import styles from "./App.module.css"
 import {GameState} from "./types/game-state";
 import {AnswerButtonGroup} from "./components/answer-button/AnswerButton";
-import {ColorToValueQuestionHeader, ValueToColorQuestionHeader} from "./components/question-header/QuestionHeader";
+import {ColorToValueQuestionHeader, ValueToColorQuestionHeader} from "./components/header/question/QuestionHeader";
 import {generateNewQuestion, getInitialState, isCorrect} from "./game/game-state-machine";
 import {cns} from "./utils/cns";
+import {CorrectResultHeader, IncorrectResultHeader} from "./components/header/result/ResultHeader";
 
 function App() {
     const [gameState, setGameState] = useState<GameState>(getInitialState())
@@ -12,12 +13,12 @@ function App() {
     const handleClickedOnValue = async (value: string) => {
         setGameState((gameState) => ({
             ...gameState,
-            playMode: isCorrect(gameState.question, value) ? 'show-correct' : 'show-wrong',
+            playMode: isCorrect(gameState.question, value) ? 'show-correct' : 'show-incorrect',
             points: gameState.points + (isCorrect(gameState.question, value) ? 1 : 0),
             round: gameState.round + 1
         }))
 
-        await new Promise(r => setTimeout(r, 1000))
+        await new Promise(r => setTimeout(r, 2000))
 
         setGameState((gameState) => ({
             ...gameState,
@@ -40,11 +41,11 @@ function App() {
         }
 
         if (gameState.playMode === 'show-correct') {
-            return <h1>yay</h1>
+            return <CorrectResultHeader/>
         }
 
-        if (gameState.playMode === 'show-wrong') {
-            return <h1>fuck</h1>
+        if (gameState.playMode === 'show-incorrect') {
+            return <IncorrectResultHeader/>
         }
         return <div>game state broken. what?!</div>
 

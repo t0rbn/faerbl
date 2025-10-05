@@ -9,5 +9,5 @@ export type GameState = {
     points: number
     round: number
     question: GameQuestion
-    playMode: 'question' | 'show-correct' | 'show-wrong'
+    playMode: 'question' | 'show-correct' | 'show-incorrect'
 }

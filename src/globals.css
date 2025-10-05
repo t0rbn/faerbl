@@ -3,7 +3,7 @@
     --brightness-background-gradient-step: 85%;
     --staturation-background-colorized: 25%;
 
-    --color-background: hsl(0, 0%, var(--brightness-background-base));
+    --color-background: hsl(0, 0, var(--brightness-background-base));
     --color-contrast: hsl(0 0% 10%);
 
     --color-status-good: hsl(137, 100%, 50%);
@@ -19,10 +19,10 @@
     --border-default: var(--size-s) solid var(--color-contrast);
     --border-radius-default: 5rem;
 
-    --duration-default: 1000ms;
+    --duration-default: 250ms;
     --transition-default: all var(--duration-default) ease-out;
 
-    @media screen and (min-height: 50rem) {
+    @media screen and (min-height: 75rem) {
         --size-m: 1.5rem;
         --size-l: 3rem;
     }

@@ -33,13 +33,28 @@ interface AnswerButtonGroupProps {
 }
 
 export function AnswerButtonGroup(props: AnswerButtonGroupProps) {
-    return <div className={cns(styles.group)}>
-        {props.question.optionValues.map(a => <AnswerButton
-            key={a}
-            displayMode={props.showSolution && !isCorrect(props.question, a) ? 'incorrect' : 'question'}
-            value={a}
+    const buttonForIndex = (index: number) => {
+        const value = props.question.optionValues[index]
+        return <AnswerButton
+            key={value}
+            displayMode={props.showSolution && !isCorrect(props.question, value) ? 'incorrect' : 'question'}
+            value={value}
             mode={props.question.mode}
-            onClick={() => props.onSelect(a)}
-        />)}
+            onClick={() => props.onSelect(value)}
+        />
+    }
+
+    return <div className={cns(styles.group)}>
+        {buttonForIndex(0)}
+        <div className={styles.verticalSeparator} />
+        {buttonForIndex(1)}
+
+        <div className={styles.horizontalSeparator} />
+
+        {buttonForIndex(2)}
+        <div className={styles.verticalSeparator} />
+        {buttonForIndex(3)}
+
+
     </div>
 }

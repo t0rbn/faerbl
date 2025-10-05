@@ -1,26 +1,34 @@
 .answerButton {
     color: var(--color-contrast);
-    background-color: var(--color-background);
 
+    background-color: transparent;
     border: none;
     transition: var(--transition-default);
     cursor: pointer;
     padding: var(--size-m);
 
     &.showWrong {
-        opacity: .25;
+        opacity: 0;
     }
-
 }
 
 .group {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr vaR(--size-s) 1fr;
+    grid-template-rows: 1fr var(--size-s) 1fr;
 
     overflow: hidden;
     border: vaR(--border-default);
     border-radius: var(--border-radius-default);
-    gap: var(--size-s);
-    background-color: var(--color-contrast)
+
+    transition: var(--transition-default);
+
+    .horizontalSeparator, .verticalSeparator {
+        background-color: var(--color-contrast);
+    }
+
+    .horizontalSeparator {
+        grid-column:  1 / span 3;
+    }
+
 }
