@@ -3,23 +3,19 @@
     transition: var(--transition-default);
 
     background-color: var(--color-background);
-    background-image: linear-gradient(
-            to bottom,
-            var(--color-background),
-            hsl(from var(--color-background) h s var(--brightness-background-gradient-secondary))
-    );
+    background-image: var(--gradient-background);
 
     &.colorized {
         --color-game: #000;
-        --color-background: hsl(from var(--color-game) h var(--staturation-background-colorized) var(--brightness-background-base));
+        --color-background: var(--color-game);
     }
 
     &.correct {
-        --color-background: var(--color-background-status-good);
+        --color-background: var(--color-status-good);
     }
 
     &.incorrect {
-        --color-background: var(--color-background-status-bad);
+        --color-background: var(--color-status-bad);
     }
 
     .appLayout {

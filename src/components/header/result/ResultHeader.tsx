@@ -2,9 +2,9 @@ import {HeaderContainer} from "../HeaderContainer";
 import styles from "./ResultHeader.module.css"
 
 export function CorrectResultHeader() {
-    return <HeaderContainer className={styles.correct} >
+    return <HeaderContainer className={styles.correct}>
         <div className={styles.icon}>check</div>
-        <strong >correct</strong>
+        <strong>correct</strong>
     </HeaderContainer>
 }
 

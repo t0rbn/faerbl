@@ -2,6 +2,7 @@ import {GameQuestion, GameQuestionMode} from "../../types/game-state";
 import styles from "./AnswerButton.module.css"
 import {cns} from "../../utils/cns";
 import React from "react";
+import {isCorrectAnswer} from "../../game/game-state-machine";
 
 interface AnswerButtonProps {
     value: string,
@@ -33,27 +34,17 @@ interface AnswerButtonGroupProps {
 }
 
 export function AnswerButtonGroup(props: AnswerButtonGroupProps) {
-    const buttonForIndex = (index: number) => {
-        const value = props.question.optionValues[index]
-        return <AnswerButton
-            key={value}
-            disabled={props.showSolution}
-            isCorrect={index === props.question.correctOptionIndex}
-            value={value}
-            mode={props.question.mode}
-            onClick={() => props.onSelect(value)}
-        />
-    }
-
     return <div className={cns(styles.group)}>
-        {buttonForIndex(0)}
-        <div className={styles.verticalSeparator}/>
-        {buttonForIndex(1)}
-
-        <div className={styles.horizontalSeparator}/>
-
-        {buttonForIndex(2)}
-        <div className={styles.verticalSeparator}/>
-        {buttonForIndex(3)}
+        {props.question.optionValues.map((a,i) =>
+            <div key={a}>
+                <AnswerButton
+                    disabled={props.showSolution}
+                    isCorrect={i === props.question.correctOptionIndex}
+                    value={a}
+                    mode={props.question.mode}
+                    onClick={() => props.onSelect(a)}
+                />
+            </div>
+            )}
     </div>
 }

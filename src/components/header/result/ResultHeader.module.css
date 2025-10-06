@@ -1,19 +1,17 @@
 .icon {
-    font-size: var(--font-size-large);
+    font-size: calc(2 * var(--font-size-large));
     font-family: 'Material Symbols';
     font-weight: bold;
 
-    line-height: 1.5;
     aspect-ratio: 1;
     vertical-align: center;
     text-align: center;
-    border-radius: 100svh;
     border: var(--border-default)
 
 }
 
 .incorrect {
-    color: var(--color-contrast-status-bad);
+    color: var(--color-status-bad);
 
     * {
         color: inherit;
@@ -21,14 +19,13 @@
 
     .icon {
         animation: var(--duration-default) ease-out var(--duration-default) wiggle;
-        background-color: var(--color-background-status-bad);
-        color: var(--color-contrast-status-bad);
-        border-color: var(--color-contrast-status-bad);
+        color: var(--color-status-bad);
+        border-color: var(--color-status-bad);
     }
 }
 
 .correct {
-    color: var(--color-contrast-status-good);
+    color: var(--color-status-good);
 
     * {
         color: inherit;
@@ -36,9 +33,8 @@
 
     .icon {
         animation: var(--duration-default) ease-out var(--duration-default) jump;
-        background-color: var(--color-background-status-good);
-        color: var(--color-contrast-status-good);
-        border-color: var(--color-contrast-status-good);
+        color: var(--color-status-good);
+        border-color: var(--color-status-good);
     }
 }
 
