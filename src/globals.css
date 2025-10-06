@@ -11,7 +11,7 @@
     --gradient-background: linear-gradient(to bottom, hsl(0 0 100% / .8), hsl(0 0 100% / .95) );
 
     --size-s: .25rem;
-    --size-m: 1rem;
+    --size-m: 1.25rem;
     --size-l: 3rem;
 
     --font-size-default: var(--size-m);
@@ -22,8 +22,4 @@
     --duration-default: 250ms;
     --transition-default: all var(--duration-default) ease-out;
 
-    @media screen and (min-height: 50rem) {
-        --size-m: 1.5rem;
-        --size-l: 3rem;
-    }
 }

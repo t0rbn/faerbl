@@ -1,13 +1,13 @@
 import React, {useState} from 'react'
 import styles from "./Game.module.css"
-import {GameState} from "../../types/game-state";
-import {AnswerButtonGroup} from "../../components/answer-button/AnswerButton";
-import {ColorToValueQuestionHeader, ValueToColorQuestionHeader} from "../../components/header/question/QuestionHeader";
-import {applyAnswer, getInitialState} from "../../game/game-state-machine";
-import {cns} from "../../utils/cns";
-import {CorrectResultHeader, IncorrectResultHeader} from "../../components/header/result/ResultHeader";
-import {ScoreBar} from "../../components/score-bar/ScoreBar";
-import {AppLayout} from "../../components/layout/app-layout/AppLayout";
+import {GameState} from "../../../types/game-state";
+import {AnswerButtonGroup} from "../../answer-button/AnswerButton";
+import {ColorToValueQuestionHeader, ValueToColorQuestionHeader} from "../../header/question/QuestionHeader";
+import {applyAnswer, getInitialState} from "../../../game/game-state-machine";
+import {cns} from "../../../utils/cns";
+import {CorrectResultHeader, IncorrectResultHeader} from "../../header/result/ResultHeader";
+import {ScoreBar} from "../../score-bar/ScoreBar";
+import {AppLayout} from "../../layout/app-layout/AppLayout";
 import {useNavigate} from "react-router";
 
 function Game() {

@@ -2,7 +2,7 @@ import { StrictMode } from 'react'
 import {Container, createRoot} from 'react-dom/client'
 
 import React from "react"
-import Game from "./routes/game/Game";
+import Game from "./components/routes/game/Game";
 
 import './index.css'
 import './globals.css'

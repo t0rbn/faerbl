@@ -5,7 +5,7 @@
     border: none;
     transition: var(--transition-default);
     cursor: pointer;
-    padding: var(--size-m);
+    padding: var(--size-s);
 
     &.showWrong {
         opacity: 0;

@@ -1,8 +1,8 @@
-import {AppLayout} from "../../components/layout/app-layout/AppLayout";
-import {CenteredContentContainer} from "../../components/layout/centered-content/CenteredContentContainer";
+import {AppLayout} from "../../layout/app-layout/AppLayout";
+import {CenteredContentContainer} from "../../layout/centered-content/CenteredContentContainer";
 import {useLocation} from "react-router";
-import {Icon} from "../../components/icon/Icon";
-import {LinkButton} from "../../components/button/Button";
+import {Icon} from "../../icon/Icon";
+import {LinkButton} from "../../button/Button";
 import styles from "./GameOver.module.css";
 
 export function GameOver() {

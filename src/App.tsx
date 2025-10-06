@@ -1,6 +1,6 @@
 import {BrowserRouter, Route, Routes} from "react-router";
-import Game from "./routes/game/Game";
-import {GameOver} from "./routes/game-over/GameOver";
+import Game from "./components/routes/game/Game";
+import {GameOver} from "./components/routes/game-over/GameOver";
 
 export function AppComponent() {
     return <BrowserRouter basename='faerbl'>

@@ -1,7 +1,5 @@
 import {getRandomIntInRange, getRandomOf} from "../../utils/random";
 import webColors from "./named-colors.json"
-import extendedColors from "./extended-named-colors.json";
-
 
 export type NotationGenerator = () => string
 
