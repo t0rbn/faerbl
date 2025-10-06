@@ -1,0 +1,37 @@
+.container {
+    transition: var(--transition-default);
+    @starting-style {
+        opacity: 0;
+    }
+
+    .spacer {
+        height: var(--size-l);
+    }
+
+    .starIcon {
+        animation: var(--duration-default) ease-in-out var(--duration-default) wiggle;
+        color: var(--color-start);
+    }
+}
+
+@keyframes wiggle {
+    0% {
+        transform: none;
+    }
+    25% {
+        transform: rotate(-10deg);
+    }
+
+    50% {
+        transform: rotate(10deg);
+
+    }
+
+    25% {
+        transform: rotate(-10deg);
+    }
+
+    100% {
+        transform: none;
+    }
+}

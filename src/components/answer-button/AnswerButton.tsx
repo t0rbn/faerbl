@@ -2,7 +2,6 @@ import {GameQuestion, GameQuestionMode} from "../../types/game-state";
 import styles from "./AnswerButton.module.css"
 import {cns} from "../../utils/cns";
 import React from "react";
-import {isCorrectAnswer} from "../../game/game-state-machine";
 
 interface AnswerButtonProps {
     value: string,

@@ -8,7 +8,7 @@ export function applyAnswer(state: GameState, answerValue: string): { newState: 
 
     const newState = {
         ...state,
-        round: state.round + 1,
+        health: state.health - (wasCorrect ? 0 : 1),
         points: state.points + (wasCorrect ? 1 : 0),
         question: generateNewQuestion()
     }
@@ -43,7 +43,7 @@ function getRandomNotationFunction(): NotationGenerator {
 export function getInitialState(): GameState {
     return {
         points: 0,
-        round: 0,
+        health: 5,
         question: generateNewQuestion(),
     }
 }
@@ -69,8 +69,8 @@ function validateState(state: GameState): void {
         throw new Error('state contains points less than zero')
     }
 
-    if (state.points > state.round) {
-        throw new Error('state contains points value greater than played rounds')
+    if (state.health < 0) {
+        throw new Error('you are dead')
     }
 }
 

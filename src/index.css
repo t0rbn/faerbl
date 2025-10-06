@@ -1,9 +1,13 @@
 @font-face {
+    font-style: normal;
+    font-display: block;
     font-family: 'Arvo';
     src: url('assets/fonts/Arvo/Arvo-Regular.ttf');
 }
 
 @font-face {
+    font-style: normal;
+    font-display: block;
     font-family: 'Material Symbols';
     src: url('assets/fonts/MaterialSymbols/MaterialSymbolsRounded-VariableFont_FILL,GRAD,opsz,wght.ttf');
 }

@@ -1,14 +1,5 @@
 .wrapper {
     height: 100%;
-    transition: var(--transition-default);
-
-    background-color: var(--color-background);
-    background-image: var(--gradient-background);
-
-    &.colorized {
-        --color-game: #000;
-        --color-background: var(--color-game);
-    }
 
     &.correct {
         --color-background: var(--color-status-good);
@@ -18,27 +9,18 @@
         --color-background: var(--color-status-bad);
     }
 
-    .appLayout {
+    .gameLayout {
         display: grid;
         grid-template-rows: max-content 1fr 50%;
         grid-template-columns: 1fr;
         grid-gap: var(--size-m);
 
         height: 100%;
-        max-height: 100%;
-        padding: var(--size-m);
-
-        max-width: 75svh;
-        margin: 0 auto;
 
         .header {
             display: flex;
             align-items: center;
             justify-content: center;
         }
-    }
-
-    .score {
-        justify-self: end;
     }
 }

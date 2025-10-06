@@ -7,6 +7,6 @@ export type GameQuestion = {
 
 export type GameState = {
     points: number
-    round: number
+    health: number
     question: GameQuestion
 }

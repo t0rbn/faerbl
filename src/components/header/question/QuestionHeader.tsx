@@ -1,23 +1,23 @@
 import styles from "./QuestionHeder.module.css"
-import {HeaderContainer} from "../HeaderContainer";
+import {CenteredContentContainer} from "../../layout/centered-content/CenteredContentContainer";
 
 interface QuestionHeaderProps {
     value: string
 }
 
 export function ColorToValueQuestionHeader(props: QuestionHeaderProps) {
-    return <HeaderContainer>
+    return <CenteredContentContainer>
         <div>find</div>
         <strong>{props.value}</strong>
-    </HeaderContainer>
+    </CenteredContentContainer>
 }
 
 
 export function ValueToColorQuestionHeader(props: QuestionHeaderProps) {
-    return <HeaderContainer>
+    return <CenteredContentContainer>
         <div className={styles.valueToColor} style={{backgroundColor: props.value}}>
             <div>find this color</div>
         </div>
-    </HeaderContainer>
+    </CenteredContentContainer>
 }
 

@@ -1,15 +1,3 @@
-.icon {
-    font-size: calc(2 * var(--font-size-large));
-    font-family: 'Material Symbols';
-    font-weight: bold;
-
-    aspect-ratio: 1;
-    vertical-align: center;
-    text-align: center;
-    border: var(--border-default)
-
-}
-
 .incorrect {
     color: var(--color-status-bad);
 
@@ -19,8 +7,6 @@
 
     .icon {
         animation: var(--duration-default) ease-out var(--duration-default) wiggle;
-        color: var(--color-status-bad);
-        border-color: var(--color-status-bad);
     }
 }
 
@@ -33,8 +19,6 @@
 
     .icon {
         animation: var(--duration-default) ease-out var(--duration-default) jump;
-        color: var(--color-status-good);
-        border-color: var(--color-status-good);
     }
 }
 

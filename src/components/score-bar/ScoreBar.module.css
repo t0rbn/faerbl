@@ -1,0 +1,25 @@
+.scoreBar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: var(--size-s);
+
+    .spacer {
+        flex-grow: 1;
+    }
+
+    .points {
+        color: var(--color-start);
+
+    }
+
+    .health {
+        color: var(--color-health);
+        transition: var(--transition-default);
+
+        &.hidden {
+            opacity: .1;
+        }
+    }
+}

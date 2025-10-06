@@ -1,0 +1,13 @@
+.appLayout {
+    height: 100%;
+    transition: var(--transition-default);
+    background-color: var(--color-background);
+    background-image: var(--gradient-background);
+
+    main {
+        height: 100%;
+        padding: var(--size-m);
+        max-width: 75svh;
+        margin: 0 auto;
+    }
+}

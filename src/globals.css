@@ -5,7 +5,10 @@
     --color-status-good: hsl(120, 100%, 33%);
     --color-status-bad: hsl(0, 100%, 50%);
 
-    --gradient-background: linear-gradient(to bottom, hsl(0 0 100% / .85), hsl(0 0 100% / .95) );
+    --color-health: hsl(0, 100%, 50%);
+    --color-start: hsl(60, 100%, 50%);
+
+    --gradient-background: linear-gradient(to bottom, hsl(0 0 100% / .8), hsl(0 0 100% / .95) );
 
     --size-s: .25rem;
     --size-m: 1rem;
@@ -19,9 +22,8 @@
     --duration-default: 250ms;
     --transition-default: all var(--duration-default) ease-out;
 
-    @media screen and (min-height: 75rem) {
+    @media screen and (min-height: 50rem) {
         --size-m: 1.5rem;
         --size-l: 3rem;
     }
-
 }
