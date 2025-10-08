@@ -24,8 +24,9 @@ function Game() {
 
         if (result.newState.health <= 0) {
             navigate('/game-over', {state: gameState})
+        } else {
+            setPlayState('question')
         }
-        setPlayState('question')
     }
 
     const correctValue = gameState.question.optionValues[gameState.question.correctOptionIndex]
