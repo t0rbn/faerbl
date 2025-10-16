@@ -9,6 +9,7 @@ import {CorrectResultHeader, IncorrectResultHeader} from "../../header/result/Re
 import {ScoreBar} from "../../score-bar/ScoreBar";
 import {AppLayout} from "../../layout/app-layout/AppLayout";
 import {useNavigate} from "react-router";
+import {useModalContext} from "../../../contexts/ModalContext";
 
 function Game() {
     const [gameState, setGameState] = useState<GameState>(getInitialState())

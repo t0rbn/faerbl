@@ -10,7 +10,7 @@ interface ScoreBarProps {
 export function ScoreBar(props: ScoreBarProps) {
     return <div className={styles.scoreBar}>
 
-        {new Array(5).fill(null).map((a,i) => <Icon icon="favorite" className={cns(styles.health, i >= props.state.health ? styles.hidden : null)} />)}
+        {new Array(5).fill(null).map((a,i) => <Icon icon="favorite" className={cns(styles.health, i >= props.state.health ? styles.hidden : null)} key={i}/>)}
 
         <div className={styles.spacer} />
         <Icon icon="star" className={styles.points}/>
