@@ -5,6 +5,7 @@
     padding: var(--size-m) var(--size-l);
     font-size: var(--size-m);
     text-decoration: none;
-    border: var(--border-default)
+    border: var(--border-default);
+    cursor: pointer;
 
 }

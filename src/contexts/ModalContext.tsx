@@ -1,23 +1,27 @@
-import {createContext, PropsWithChildren, ReactNode, useContext, useState} from "react";
+import {createContext, PropsWithChildren, ReactNode, useContext, useEffect, useMemo, useState} from "react";
 import {Modal} from "../components/modal/Modal";
 
 const ModalContext = createContext({
-    open: (content: ReactNode, closeable?: boolean) => {},
+    open: (content: ReactNode) => {},
     close: () => {},
 })
 
 function ModalContextProvider(props: PropsWithChildren) {
     const [currentContent, setCurrentContent] = useState< React.ReactNode | null>(null);
 
-    const handleOpen = (content: ReactNode) => {
-        setCurrentContent(() => content)
-    }
+    const handleOpen = useMemo(() => (content: ReactNode) => {
+        setCurrentContent(content)
+    }, [setCurrentContent])
 
-    const handleClose = () => {
-       setCurrentContent(() => null)
-    }
+    const handleClose = useMemo(() => () => {
+       setCurrentContent(null)
+    }, [setCurrentContent])
 
-    return <ModalContext.Provider value={{open: handleOpen, close: handleClose}}>
+    useEffect(() => {
+    }, [currentContent])
+
+
+    return <ModalContext.Provider value={{open: (c) => handleOpen(c), close: () => handleClose()}}>
         {currentContent ? <Modal>{currentContent}</Modal> : null}
         {props.children}
     </ModalContext.Provider>
