@@ -11,9 +11,17 @@ self.addEventListener('install', (event) => {
   );
 });
 
-self.addEventListener('activate', () => {
-  // Clean up old caches if needed in the future
-  console.log('Service worker activated');
+self.addEventListener('activate', event => {
+    const currentCaches = [CACHE_RUNTIME];
+    event.waitUntil(
+        caches.keys().then(cacheNames => {
+            return cacheNames.filter(cacheName => !currentCaches.includes(cacheName));
+        }).then(cachesToDelete => {
+            return Promise.all(cachesToDelete.map(cacheToDelete => {
+                return caches.delete(cacheToDelete);
+            }));
+        }).then(() => self.clients.claim())
+    );
 });
 
 // Empty fetch event handler
