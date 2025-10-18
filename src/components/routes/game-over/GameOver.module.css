@@ -10,7 +10,7 @@
 
     .starIcon {
         animation: var(--duration-default) ease-in-out var(--duration-default) wiggle;
-        color: var(--color-start);
+        color: var(--color-star);
     }
 }
 

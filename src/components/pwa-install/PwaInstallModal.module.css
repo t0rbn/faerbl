@@ -1,19 +1,20 @@
 .content {
-    > * {
-        margin: 0;
-
-        &:not(:last-child) {
-            margin-bottom: var(--size-l);
-        }
+    h1 {
+        margin-bottom: var(--size-m);
     }
 
+    .buttonGroup {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: var(--size-m);
+        margin-top: var(--size-l);
 
-.buttonGroup {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: var(--size-m);
-}
+        >* {
+            flex-grow: 1;
+            flex-basis: 0;
+        }
+    }
 
 }

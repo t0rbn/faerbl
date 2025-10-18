@@ -2,7 +2,7 @@
     appearance: none;
     background-color: transparent;
 
-    padding: var(--size-m) var(--size-l);
+    padding: var(--size-m) var(--size-s);
     font-size: var(--size-m);
     text-decoration: none;
     border: var(--border-default);

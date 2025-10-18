@@ -29,7 +29,8 @@ html, body {
     }
 
     h1 {
-        font-size: var(--size-l);
+        font-size: calc(var(--size-m) * 1.5);
+        font-weight: bold;
     }
 
     height: 100%;

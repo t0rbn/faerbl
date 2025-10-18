@@ -6,7 +6,7 @@
     --color-status-bad: hsl(0, 100%, 50%);
 
     --color-health: hsl(0, 100%, 50%);
-    --color-start: hsl(60, 100%, 50%);
+    --color-star: hsl(60, 100%, 50%);
 
     --gradient-background: linear-gradient(to bottom, hsl(0 0 100% / .8), hsl(0 0 100% / .95) );
 
